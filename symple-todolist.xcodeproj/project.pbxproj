@@ -48,7 +48,6 @@
 				0D484710FDDB3BCA3E1FEAF6 /* Pods-symple-todolist.debug.xcconfig */,
 				7B525E7FB0D2F7076E839FCA /* Pods-symple-todolist.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +72,39 @@
 		3871BB0E283F79ED00AD6BCC /* symple-todolist */ = {
 			isa = PBXGroup;
 			children = (
+				38BB2E2A28912FF00070DC4C /* Model */,
+				38BB2E2C289130090070DC4C /* View */,
+				38BB2E2B28912FFA0070DC4C /* ViewModel */,
 				3871BB0F283F79ED00AD6BCC /* AppDelegate.swift */,
 				3871BB11283F79ED00AD6BCC /* SceneDelegate.swift */,
-				3871BB13283F79ED00AD6BCC /* ViewController.swift */,
-				3871BB15283F79ED00AD6BCC /* Main.storyboard */,
 				3871BB18283F79F100AD6BCC /* Assets.xcassets */,
 				3871BB1A283F79F100AD6BCC /* LaunchScreen.storyboard */,
 				3871BB1D283F79F100AD6BCC /* Info.plist */,
 			);
 			path = "symple-todolist";
+			sourceTree = "<group>";
+		};
+		38BB2E2A28912FF00070DC4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		38BB2E2B28912FFA0070DC4C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		38BB2E2C289130090070DC4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3871BB15283F79ED00AD6BCC /* Main.storyboard */,
+				3871BB13283F79ED00AD6BCC /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C59A794A0AF2BD5D862AE314 /* Frameworks */ = {
@@ -103,6 +126,7 @@
 				3871BB08283F79ED00AD6BCC /* Sources */,
 				3871BB09283F79ED00AD6BCC /* Frameworks */,
 				3871BB0A283F79ED00AD6BCC /* Resources */,
+				E348B64A9480076D71B5D5AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +204,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E348B64A9480076D71B5D5AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-symple-todolist/Pods-symple-todolist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-symple-todolist/Pods-symple-todolist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-symple-todolist/Pods-symple-todolist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
