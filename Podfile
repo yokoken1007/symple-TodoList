@@ -6,5 +6,8 @@ target 'symple-todolist' do
   use_frameworks!
 
   # Pods for symple-todolist
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RealmSwift'
 
 end
