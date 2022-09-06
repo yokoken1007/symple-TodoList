@@ -8,5 +8,6 @@ target 'symple-todolist' do
   # Pods for symple-todolist
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RealmSwift'
 
 end
