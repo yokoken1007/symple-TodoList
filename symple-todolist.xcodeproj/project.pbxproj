@@ -16,21 +16,14 @@
 		3871BB14283F79ED00AD6BCC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871BB13283F79ED00AD6BCC /* FirstViewController.swift */; };
 		3871BB19283F79F100AD6BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3871BB18283F79F100AD6BCC /* Assets.xcassets */; };
 		3871BB1C283F79F100AD6BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3871BB1A283F79F100AD6BCC /* LaunchScreen.storyboard */; };
-		38C469D228C1A1DF002EBBE7 /* symple-todolistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C469D128C1A1DF002EBBE7 /* symple-todolistTest.swift */; };
+		38AB601728C8384500BFD6B0 /* SympleTodolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB601628C8384500BFD6B0 /* SympleTodolistTests.swift */; };
 		38D0CF8128BD8EDA0030E78C /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D0CF8028BD8EDA0030E78C /* FooterView.xib */; };
 		38D0CF8328BD900E0030E78C /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D0CF8228BD900E0030E78C /* FooterView.swift */; };
 		60E8412A57BCA9586D97052E /* Pods_symple_todolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB6DD1551177E1DCE775FD4 /* Pods_symple_todolist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38F26C6128C0360000276853 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3871BB04283F79ED00AD6BCC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3871BB0B283F79ED00AD6BCC;
-			remoteInfo = "symple-todolist";
-		};
-		38F26C7328C05B9400276853 /* PBXContainerItemProxy */ = {
+		38AB601828C8384500BFD6B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3871BB04283F79ED00AD6BCC /* Project object */;
 			proxyType = 1;
@@ -53,11 +46,10 @@
 		3871BB18283F79F100AD6BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3871BB1B283F79F100AD6BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3871BB1D283F79F100AD6BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38C469D128C1A1DF002EBBE7 /* symple-todolistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "symple-todolistTest.swift"; sourceTree = "<group>"; };
+		38AB601428C8384500BFD6B0 /* symple-todolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "symple-todolistTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38AB601628C8384500BFD6B0 /* SympleTodolistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympleTodolistTests.swift; sourceTree = "<group>"; };
 		38D0CF8028BD8EDA0030E78C /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		38D0CF8228BD900E0030E78C /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		38F26C5B28C0360000276853 /* symple-todolistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "symple-todolistUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F26C6F28C05B9400276853 /* symple-todolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "symple-todolistTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B525E7FB0D2F7076E839FCA /* Pods-symple-todolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-symple-todolist.release.xcconfig"; path = "Target Support Files/Pods-symple-todolist/Pods-symple-todolist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +62,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38F26C5828C0360000276853 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F26C6C28C05B9400276853 /* Frameworks */ = {
+		38AB601128C8384500BFD6B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -100,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				3871BB0E283F79ED00AD6BCC /* symple-todolist */,
+				38AB601528C8384500BFD6B0 /* symple-todolistTests */,
 				3871BB0D283F79ED00AD6BCC /* Products */,
 				2A67A547F222098EFA1FC449 /* Pods */,
 				C59A794A0AF2BD5D862AE314 /* Frameworks */,
@@ -110,8 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3871BB0C283F79ED00AD6BCC /* symple-todolist.app */,
-				38F26C5B28C0360000276853 /* symple-todolistUITests.xctest */,
-				38F26C6F28C05B9400276853 /* symple-todolistTests.xctest */,
+				38AB601428C8384500BFD6B0 /* symple-todolistTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,9 +112,16 @@
 				3871BB18283F79F100AD6BCC /* Assets.xcassets */,
 				3871BB1A283F79F100AD6BCC /* LaunchScreen.storyboard */,
 				3871BB1D283F79F100AD6BCC /* Info.plist */,
-				38C469D128C1A1DF002EBBE7 /* symple-todolistTest.swift */,
 			);
 			path = "symple-todolist";
+			sourceTree = "<group>";
+		};
+		38AB601528C8384500BFD6B0 /* symple-todolistTests */ = {
+			isa = PBXGroup;
+			children = (
+				38AB601628C8384500BFD6B0 /* SympleTodolistTests.swift */,
+			);
+			path = "symple-todolistTests";
 			sourceTree = "<group>";
 		};
 		38F26C5328C02EF100276853 /* Views */ = {
@@ -199,40 +191,22 @@
 			productReference = 3871BB0C283F79ED00AD6BCC /* symple-todolist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		38F26C5A28C0360000276853 /* symple-todolistUITests */ = {
+		38AB601328C8384500BFD6B0 /* symple-todolistTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38F26C6328C0360000276853 /* Build configuration list for PBXNativeTarget "symple-todolistUITests" */;
+			buildConfigurationList = 38AB601A28C8384500BFD6B0 /* Build configuration list for PBXNativeTarget "symple-todolistTests" */;
 			buildPhases = (
-				38F26C5728C0360000276853 /* Sources */,
-				38F26C5828C0360000276853 /* Frameworks */,
-				38F26C5928C0360000276853 /* Resources */,
+				38AB601028C8384500BFD6B0 /* Sources */,
+				38AB601128C8384500BFD6B0 /* Frameworks */,
+				38AB601228C8384500BFD6B0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				38F26C6228C0360000276853 /* PBXTargetDependency */,
-			);
-			name = "symple-todolistUITests";
-			productName = "symple-todolistUITests";
-			productReference = 38F26C5B28C0360000276853 /* symple-todolistUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		38F26C6E28C05B9400276853 /* symple-todolistTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 38F26C7528C05B9400276853 /* Build configuration list for PBXNativeTarget "symple-todolistTests" */;
-			buildPhases = (
-				38F26C6B28C05B9400276853 /* Sources */,
-				38F26C6C28C05B9400276853 /* Frameworks */,
-				38F26C6D28C05B9400276853 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				38F26C7428C05B9400276853 /* PBXTargetDependency */,
+				38AB601928C8384500BFD6B0 /* PBXTargetDependency */,
 			);
 			name = "symple-todolistTests";
 			productName = "symple-todolistTests";
-			productReference = 38F26C6F28C05B9400276853 /* symple-todolistTests.xctest */;
+			productReference = 38AB601428C8384500BFD6B0 /* symple-todolistTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -242,19 +216,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					3871BB0B283F79ED00AD6BCC = {
 						CreatedOnToolsVersion = 13.1;
 					};
-					38F26C5A28C0360000276853 = {
-						CreatedOnToolsVersion = 13.1;
-						LastSwiftMigration = 1340;
-						TestTargetID = 3871BB0B283F79ED00AD6BCC;
-					};
-					38F26C6E28C05B9400276853 = {
-						CreatedOnToolsVersion = 13.1;
+					38AB601328C8384500BFD6B0 = {
+						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 3871BB0B283F79ED00AD6BCC;
 					};
 				};
@@ -273,8 +242,7 @@
 			projectRoot = "";
 			targets = (
 				3871BB0B283F79ED00AD6BCC /* symple-todolist */,
-				38F26C5A28C0360000276853 /* symple-todolistUITests */,
-				38F26C6E28C05B9400276853 /* symple-todolistTests */,
+				38AB601328C8384500BFD6B0 /* symple-todolistTests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,14 +260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38F26C5928C0360000276853 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F26C6D28C05B9400276853 /* Resources */ = {
+		38AB601228C8384500BFD6B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,33 +342,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38F26C5728C0360000276853 /* Sources */ = {
+		38AB601028C8384500BFD6B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C469D228C1A1DF002EBBE7 /* symple-todolistTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F26C6B28C05B9400276853 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				38AB601728C8384500BFD6B0 /* SympleTodolistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		38F26C6228C0360000276853 /* PBXTargetDependency */ = {
+		38AB601928C8384500BFD6B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3871BB0B283F79ED00AD6BCC /* symple-todolist */;
-			targetProxy = 38F26C6128C0360000276853 /* PBXContainerItemProxy */;
-		};
-		38F26C7428C05B9400276853 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3871BB0B283F79ED00AD6BCC /* symple-todolist */;
-			targetProxy = 38F26C7328C05B9400276853 /* PBXContainerItemProxy */;
+			targetProxy = 38AB601828C8384500BFD6B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -593,63 +542,14 @@
 			};
 			name = Release;
 		};
-		38F26C6428C0360000276853 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yokoyama.app.symple-todolistUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "symple-todolist";
-			};
-			name = Debug;
-		};
-		38F26C6528C0360000276853 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yokoyama.app.symple-todolistUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "symple-todolist";
-			};
-			name = Release;
-		};
-		38F26C7628C05B9400276853 /* Debug */ = {
+		38AB601B28C8384500BFD6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yokoyama.app.symple-todolistTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,18 +560,14 @@
 			};
 			name = Debug;
 		};
-		38F26C7728C05B9400276853 /* Release */ = {
+		38AB601C28C8384500BFD6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yokoyama.app.symple-todolistTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -703,20 +599,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38F26C6328C0360000276853 /* Build configuration list for PBXNativeTarget "symple-todolistUITests" */ = {
+		38AB601A28C8384500BFD6B0 /* Build configuration list for PBXNativeTarget "symple-todolistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				38F26C6428C0360000276853 /* Debug */,
-				38F26C6528C0360000276853 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		38F26C7528C05B9400276853 /* Build configuration list for PBXNativeTarget "symple-todolistTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				38F26C7628C05B9400276853 /* Debug */,
-				38F26C7728C05B9400276853 /* Release */,
+				38AB601B28C8384500BFD6B0 /* Debug */,
+				38AB601C28C8384500BFD6B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -35,7 +35,7 @@ class FirstViewController: UIViewController {
         
         // DBのファイルの場所
         print("url: \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        list = realm.objects(ItemList.self).first?.list
+        list = realm.objects(ItemList.self).first!.list
         
         // バーボタンアイテムの初期化
         // editBarButtonItem = UIBarButtonItem(title: "編集", style: .done, target: self, action: #selector(editBarButtonTapped(_:)))
@@ -56,6 +56,17 @@ class FirstViewController: UIViewController {
         let nib: UINib = UINib(nibName: "FooterView", bundle: nil)
         listTableView.register(nib, forHeaderFooterViewReuseIdentifier: "FooterView")
         
+        let judgeFlg = testMethod(hikisuu1: 0, hikisuu2: 0)
+        print("judgeFlg: \(judgeFlg)")
+        
+    }
+    
+    func testMethod (hikisuu1: Int, hikisuu2: Int) -> Bool {
+        if hikisuu1 == hikisuu2 {
+            return true
+        } else {
+            return false
+        }
     }
     
     @objc private func trashButtonPressed(_ sender: UIBarButtonItem) {
@@ -81,7 +92,6 @@ class FirstViewController: UIViewController {
     
     // 「編集」押下時に呼ばれる
     override func setEditing(_ editing: Bool, animated: Bool) {
-        
         if editButtonCaseFlg == false {
             // print("edit：デフォルトケース")
             super.setEditing(editing, animated: animated)
@@ -90,73 +100,73 @@ class FirstViewController: UIViewController {
             
         } else {
             // print("edit：テキスト入力時ケース")
+            textUpdate()
+        }
+    }
+    
+    func textUpdate () {
+        let item = Item()
+        let rowCount = listTableView.numberOfRows(inSection: 0) // セクションの行数を返す
+        var deleteCount = 0 // 削除するセル数をカウント
+        
+        for i in 0 ..< rowCount {
+            let indexpath: IndexPath = IndexPath(row: i, section: 0)
+            let cell = listTableView.cellForRow(at: indexpath) as! ListCell
+            let listNum = i - deleteCount
             
-            let item = Item()
-            let rowCount = listTableView.numberOfRows(inSection: 0) // セクションの行数を返す
-            
-            for i in 0 ..< rowCount {
-                // print("\(i+1)つ目のセルデータを判定する")
-                let indexpath: IndexPath = IndexPath(row: i, section: 0)
-                let cell = listTableView.cellForRow(at: indexpath) as! ListCell
+            try! self.realm.write {
+                item.itemStrings = cell.cellTextField.text! // → これをrealm外で書くとエラーになる
                 
-                try! self.realm.write {
-                    item.itemStrings = cell.cellTextField.text! // → これをrealm外で書くとエラーになる
-                    
-                    if plusButtonTappedFlg {
-                        if self.list == nil {
-                            print("\(i + 1)つ目のセルデータは初回です")
-                            if item.itemStrings == "" {
-                                print("初回：空のため登録しない")
-                            } else {
-                                let itemList = ItemList()
-                                itemList.list.append(item)
-                                self.realm.add(itemList)
-                                self.list = realm.objects(ItemList.self).first?.list
-                            }
-                            
-                        } else {
-                            
-                            if i == rowCount - 1 {
-                                // 新規セル　追加
-                                print("\(i + 1)つ目のセルデータを保存する")
-                                if item.itemStrings == "" {
-                                    print("\(i + 1)つ目のセルデータは空のため登録しない")
-                                } else {
-                                    self.list!.append(item)
-                                }
-                            }
+                if plusButtonTappedFlg {
+                    if self.list == nil {
+                        // print("\(i + 1)つ目のセルデータは初回です")
+                        guard item.itemStrings != "" else {
+                            // print("初回：空のため登録しない")
+                            return
                         }
-                    } else {
-                        // テキストフィールドをタップして編集時
-                        print("\(i + 1)つ目のセルデータは保存済み")
+                        let itemList = ItemList()
+                        itemList.list.append(item)
+                        self.realm.add(itemList)
+                        self.list = realm.objects(ItemList.self).first?.list
                         
-                        // 更新チェック
-                        if list![i].itemStrings != cell.cellTextField.text! {
-                            print("\(i + 1)つ目のセルデータを更新する")
-                            
-                            if item.itemStrings == "" {
-                                // データ削除
-                                print("\(i + 1)つ目のセルデータは空に変更されたため削除する")
-                                realm.delete(list![i])
-                                
-                            } else {
-                                list![i].itemStrings = cell.cellTextField.text!
+                    } else {
+                        if i == rowCount - 1 {
+                            // 新規セル　追加
+                            // print("\(i + 1)つ目のセルデータを保存する")
+                            guard item.itemStrings != "" else {
+                                // print("\(i + 1)つ目のセルデータは空のため登録しない")
+                                return
                             }
-                        } else {
-                            print("\(i + 1)つ目のセルデータは更新なし")
+                            self.list!.append(item)
                         }
+                    }
+                } else {
+                    // テキストフィールドをタップして編集時
+                    // print("\(i + 1)つ目のセルデータは保存済み")
+                    // 更新チェック
+                    guard list![listNum].itemStrings != cell.cellTextField.text! else {
+                        // print("\(listNum + 1)つ目のセルデータは変更なし")
+                        return
+                    }
+                    if item.itemStrings == "" {
+                        // データ削除
+                        // print("\(listNum + 1)つ目のセルデータは空に変更されたため削除する")
+                        realm.delete(list![listNum])
+                        deleteCount += 1
+                    } else {
+                        // print("\(listNum + 1)つ目のセルデータは変更されたため修正する")
+                        list![listNum].itemStrings = cell.cellTextField.text!
                     }
                 }
             }
-            
-            editButtonItem.title = "編集"
-            editButtonCaseFlg = false
-            plusButtonTappedFlg = false
-            listTableView.reloadData()
-            listFooterView.isHidden = false
         }
-        
+        editButtonItem.title = "編集"
+        editButtonCaseFlg = false
+        plusButtonTappedFlg = false
+        listTableView.reloadData()
+        listFooterView.isHidden = false
     }
+
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
