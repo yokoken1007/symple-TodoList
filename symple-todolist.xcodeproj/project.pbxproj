@@ -176,11 +176,11 @@
 			buildConfigurationList = 3871BB20283F79F100AD6BCC /* Build configuration list for PBXNativeTarget "symple-todolist" */;
 			buildPhases = (
 				70F2DB6F8B91E0FA3DACF5B5 /* [CP] Check Pods Manifest.lock */,
+				38F26C7828C0661D00276853 /* ShellScript */,
 				3871BB08283F79ED00AD6BCC /* Sources */,
 				3871BB09283F79ED00AD6BCC /* Frameworks */,
 				3871BB0A283F79ED00AD6BCC /* Resources */,
 				E348B64A9480076D71B5D5AC /* [CP] Embed Pods Frameworks */,
-				38F26C7828C0661D00276853 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -272,6 +272,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		38F26C7828C0661D00276853 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -282,6 +283,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

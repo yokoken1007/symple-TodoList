@@ -41,8 +41,8 @@ opt_in_rules:
 
 # 追加したOSSライブラリは対象に含めたくない
 excluded:
-- Pods/
-- Carthage/
+- Pods
+- Carthage
 
 # 1行あたりの文字数制限を300に変更
 # プロジェクト作成時にデフォルトで追加されるコメントをひっかけないため

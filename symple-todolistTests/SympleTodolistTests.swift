@@ -9,12 +9,5 @@ import XCTest
 @testable import symple_todolist
 
 class SympleTodolistTests: XCTestCase {
-
-    let first = FirstViewController()
     
-    func testMethodtest() {
-        XCTAssertTrue(first.testMethod(hikisuu1: 100, hikisuu2: 100))
-        
-    }
-
 }

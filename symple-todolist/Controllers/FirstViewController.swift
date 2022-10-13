@@ -26,16 +26,18 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpViews()
+        realmURLCheck()
+        
+    }
+    
+    private func setUpViews() {
         self.title = "リスト"
         
         listTableView.delegate = self
         listTableView.dataSource = self
         // registerでxibをidentifierとして設定する
         listTableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
-        
-        // DBのファイルの場所
-        print("url: \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        list = realm.objects(ItemList.self).first!.list
         
         // バーボタンアイテムの初期化
         // editBarButtonItem = UIBarButtonItem(title: "編集", style: .done, target: self, action: #selector(editBarButtonTapped(_:)))
@@ -55,18 +57,12 @@ class FirstViewController: UIViewController {
         // Footer
         let nib: UINib = UINib(nibName: "FooterView", bundle: nil)
         listTableView.register(nib, forHeaderFooterViewReuseIdentifier: "FooterView")
-        
-        let judgeFlg = testMethod(hikisuu1: 0, hikisuu2: 0)
-        print("judgeFlg: \(judgeFlg)")
-        
     }
     
-    func testMethod (hikisuu1: Int, hikisuu2: Int) -> Bool {
-        if hikisuu1 == hikisuu2 {
-            return true
-        } else {
-            return false
-        }
+    private func realmURLCheck() {
+        // DBのファイルの場所
+        print("url: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        list = realm.objects(ItemList.self).first?.list
     }
     
     @objc private func trashButtonPressed(_ sender: UIBarButtonItem) {
@@ -104,7 +100,7 @@ class FirstViewController: UIViewController {
         }
     }
     
-    func textUpdate () {
+    private func textUpdate () {
         let item = Item()
         let rowCount = listTableView.numberOfRows(inSection: 0) // セクションの行数を返す
         var deleteCount = 0 // 削除するセル数をカウント
@@ -116,7 +112,7 @@ class FirstViewController: UIViewController {
             
             try! self.realm.write {
                 item.itemStrings = cell.cellTextField.text! // → これをrealm外で書くとエラーになる
-                
+                // + セル 押下時
                 if plusButtonTappedFlg {
                     if self.list == nil {
                         // print("\(i + 1)つ目のセルデータは初回です")
@@ -130,16 +126,19 @@ class FirstViewController: UIViewController {
                         self.list = realm.objects(ItemList.self).first?.list
                         
                     } else {
-                        if i == rowCount - 1 {
-                            // 新規セル　追加
-                            // print("\(i + 1)つ目のセルデータを保存する")
-                            guard item.itemStrings != "" else {
-                                // print("\(i + 1)つ目のセルデータは空のため登録しない")
-                                return
-                            }
-                            self.list!.append(item)
+                        // 新規追加のセルか判定
+                        guard i == rowCount - 1 else {
+                            return
                         }
+                        // print("\(i + 1)つ目のセルデータを保存する")
+                        guard item.itemStrings != "" else {
+                            // print("\(i + 1)つ目のセルデータは空のため登録しない")
+                            return
+                        }
+                        self.list!.append(item)
+                        
                     }
+                    
                 } else {
                     // テキストフィールドをタップして編集時
                     // print("\(i + 1)つ目のセルデータは保存済み")
@@ -265,7 +264,7 @@ extension FirstViewController: ListCellDelegate {
 
 extension FirstViewController: FooterViewDelegate {
     func plusButtonTapped() {
-        //　セルを追加
+        // セルを追加
         plusButtonTappedFlg = true
         
         editButtonItem.title = "完了"
