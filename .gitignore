@@ -41,5 +41,3 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 iOSInjectionProject/UserInterfaceState.xcuserstate
-
-*.generated.swift
