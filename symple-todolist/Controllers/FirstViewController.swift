@@ -28,7 +28,7 @@ class FirstViewController: UIViewController {
         
         setUpViews()
         realmURLCheck()
-        print("bitrise差分テスト")
+        print("bitrise差分テスト2")
         
     }
     
